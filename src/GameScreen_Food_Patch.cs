@@ -81,56 +81,6 @@ namespace ShowActualAvailableFood
             return totalFoodCount;
         }
 
-
-        /// <summary>
-        /// Loop through all of the food parents to see if they end on a food producer.
-        /// </summary>
-        /// <param name="gameCard"></param>
-        /// <returns>hasAncestor means the food has a food producer as a parent in a stack
-        /// isDirectPlacement means the food is the food that is currently being processed by a stack.
-        /// </returns>
-        //private static FoodPlacement IsAncestorFoodProducer(GameCard gameCard)
-        //{
-
-
-        //    //Finish Here - change the count to be from parent on.  
-        //    //  Should be a lot less data traversal.
-
-        //    FoodPlacement producerInfo = new FoodPlacement(false, false);
-
-        //    if (gameCard == null || gameCard.Parent == null) return producerInfo;
-
-        //    GameCard targetCard = gameCard.Parent;
-
-        //    int depth = 0;
-
-        //    while(targetCard != null)
-        //    {
-        //        if(targetCard.CardData is Composter)
-        //        {
-        //            //The composter requires 5 cards to start.  Treating all cards
-        //            //  as the "first on stack".  Mostly because I would rather not hard code 5.
-        //            producerInfo.isDirectPlacement = true;
-        //            producerInfo.hasAncestor = true;
-        //            return producerInfo;
-
-        //        }
-        //        else if (IsFoodProducer(targetCard))
-        //        {
-        //            if (depth == 0) producerInfo.isDirectPlacement = true;
-
-        //            producerInfo.hasAncestor = true;
-        //        }
-
-        //        targetCard = targetCard.Parent;
-        //        depth++;
-        //    }
-
-        //    return producerInfo;
-
-
-        //}
-
         public static bool IsFoodProducer(GameCard gameCard)
         {
             if (gameCard == null) return false;
@@ -150,6 +100,5 @@ namespace ShowActualAvailableFood
 
     }
 
-    internal record struct FoodPlacement(bool HasAncestor, bool IsDirectPlacement);
     internal record struct FoodCount(int FirstOnProducer, int OnProduerStack);
 }
