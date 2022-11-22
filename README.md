@@ -36,5 +36,5 @@ Display in game
 |Setting|Default|Description|
 |--|--|--|
 |ShowNotFirstFood|false|Shows the amount of food that is not the first card on a food consumer.  The first five items on a Composter are also excluded from this count.|
-|ShowNotInStack|true|Shows the amount of food that is not on a food consumer at all|
+|ShowNotInStack|true|Shows the amount of food that is not on a food consumer at all.|
 
