@@ -1,0 +1,9 @@
+{
+    "name": "Show_Actual_Available_Food",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/NBKRedSpy/ShowActualAvailableFood",
+    "description": "Displays one or more additional food counters which do not include food placed on a Food Producer.",
+	"dependencies": [
+		"BepInEx-BepInExPack_Stacklands-5.4.2100"
+	]
+}
