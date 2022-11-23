@@ -38,7 +38,12 @@ Display in game
 |ShowNotFirstFood|false|Shows the amount of food that is not the first card on a food consumer.  The first five items on a Composter are also excluded from this count.|
 |ShowNotInStack|true|Shows the amount of food that is not on a food consumer at all.|
 |ShowWarningColor|true|If true, the food text will be changed to an orange color if one of the enabled food counters are below the required food.|
+|WarningMultiplier|1|The food warning multiplier.  For example, if the value is 2, the minimum food warning will be shown if the food is less than 2x the required food |
+
 
 # Change Log
+
+## 1.2
+Added warning food multiplier.
 ## 1.1
 Added food counter warning color and related configuration option.

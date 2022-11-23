@@ -1,6 +1,6 @@
 {
     "name": "Show_Actual_Available_Food",
-    "version_number": "1.1.0",
+    "version_number": "1.2.0",
     "website_url": "https://github.com/NBKRedSpy/ShowActualAvailableFood",
     "description": "Displays one or more additional food counters which do not include food placed on a Food Producer.",
 	"dependencies": [

@@ -12,7 +12,7 @@ namespace ShowActualAvailableFood
     public static class GameScreen_Food_Patch
     {
 
-        private static Color WarningColor;
+        private static float WarningMultiplier;
 
 
         public static void Postfix(GameScreen __instance)
@@ -23,6 +23,11 @@ namespace ShowActualAvailableFood
             {
                 //Not sure why this mod is even enabled ;)
                 return;
+            }
+
+            if(WarningMultiplier == 0f)
+            {
+                WarningMultiplier = Plugin.WarningMultiplier.Value;
             }
 
             FoodCount count = GetFoodPlacementCount(__instance);
@@ -55,8 +60,8 @@ namespace ShowActualAvailableFood
                 int requiredfoodCount = WorldManager.instance.GetRequiredFoodCount();
 
                 if ((totalFoodCount >= requiredfoodCount && WorldManager.instance.DebugNoFoodEnabled == false) && (
-                    (Plugin.ShowNotInStack.Value && notInStackFoodRemainder < requiredfoodCount) ||
-                    (Plugin.ShowNotFirstFood.Value && notFirstFoodRemainder < requiredfoodCount)
+                    (Plugin.ShowNotInStack.Value && notInStackFoodRemainder < (requiredfoodCount * WarningMultiplier)) ||
+                    (Plugin.ShowNotFirstFood.Value && notFirstFoodRemainder < (requiredfoodCount * WarningMultiplier))
                     ))
                 {
                     //Tried creating a color, but oddly the text would be red, and the icon would be the selected color.
