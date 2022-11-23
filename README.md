@@ -11,7 +11,7 @@ A Food Producer is a garden, farm, fishing trap, etc.
 
 The food count can be "Food not the first item on a Food Producer" and/or "Food that is not part of a stack on a Food Producer".
 
-By default, only the "Not in stack" value is added to the display.
+By default, only the "Not in stack" value is added to the display, and the food text will change to orange if any enabled food counters is under the required food.
 
 See [Settings](#settings) below.
 
@@ -37,4 +37,8 @@ Display in game
 |--|--|--|
 |ShowNotFirstFood|false|Shows the amount of food that is not the first card on a food consumer.  The first five items on a Composter are also excluded from this count.|
 |ShowNotInStack|true|Shows the amount of food that is not on a food consumer at all.|
+|ShowWarningColor|true|If true, the food text will be changed to an orange color if one of the enabled food counters are below the required food.|
 
+# Change Log
+## 1.1
+Added food counter warning color and related configuration option.
