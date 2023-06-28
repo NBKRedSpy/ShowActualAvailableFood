@@ -42,8 +42,5 @@ Display in game
 
 
 # Change Log
-
-## 1.2
-Added warning food multiplier.
-## 1.1
-Added food counter warning color and related configuration option.
+## 2.0 
+Steam Workshop compatibility.
