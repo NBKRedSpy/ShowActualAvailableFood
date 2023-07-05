@@ -5,10 +5,10 @@ public class Plugin : Mod
 {
 
 
-    public static ConfigEntry ShowNotFirstFood;
-    public static ConfigEntry ShowNotInStack;
-    public static ConfigEntry ShowWarningColor;
-    public static ConfigEntry WarningMultiplier;
+    public static ConfigEntry<bool> ShowNotFirstFood;
+    public static ConfigEntry<bool> ShowNotInStack;
+    public static ConfigEntry<bool> ShowWarningColor;
+    public static ConfigEntry<float> WarningMultiplier;
 
     public static ModLogger ModLogger;
 
@@ -22,10 +22,5 @@ public class Plugin : Mod
         WarningMultiplier = Config.GetEntry<float>("Warning Multiplier", 1f);
 
         Harmony.PatchAll();
-    }
-
-    private void OnDestroy()
-    {
-        Harmony.UnpatchSelf();
     }
 }

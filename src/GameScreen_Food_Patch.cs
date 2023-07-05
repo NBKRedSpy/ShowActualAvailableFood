@@ -17,7 +17,7 @@ namespace ShowActualAvailableFood
         {
 
 
-            if(Plugin.ShowNotFirstFood.GetBool() == false && Plugin.ShowNotInStack.GetBool() == false)
+            if(Plugin.ShowNotFirstFood.Value == false && Plugin.ShowNotInStack.Value == false)
             {
                 //Not sure why this mod is even enabled ;)
                 return;
@@ -26,7 +26,7 @@ namespace ShowActualAvailableFood
 
             float warningMultiplier;
 
-            warningMultiplier = Plugin.WarningMultiplier.GetFloat();
+            warningMultiplier = Plugin.WarningMultiplier.Value;
 
             FoodCount count = GetFoodPlacementCount(__instance);
 
@@ -40,12 +40,12 @@ namespace ShowActualAvailableFood
             int notInStackFoodRemainder = totalFoodCount - count.OnProduerStack;
             int notFirstFoodRemainder = totalFoodCount - count.FirstOnProducer;
 
-            if (Plugin.ShowNotInStack.GetBool())
+            if (Plugin.ShowNotInStack.Value)
             {
                 countStrings.Add(notInStackFoodRemainder.ToString());
             }
 
-            if(Plugin.ShowNotFirstFood.GetBool())
+            if(Plugin.ShowNotFirstFood.Value)
             {
                 countStrings.Add(notFirstFoodRemainder.ToString());
             }
@@ -53,13 +53,13 @@ namespace ShowActualAvailableFood
             __instance.FoodText.text = $"{string.Join("/", countStrings)}/{__instance.FoodText.text}";
 
             //---Set warning color
-            if (Plugin.ShowWarningColor.GetBool())
+            if (Plugin.ShowWarningColor.Value)
             {
                 int requiredfoodCount = WorldManager.instance.GetRequiredFoodCount();
 
                 if ((totalFoodCount >= requiredfoodCount && WorldManager.instance.DebugNoFoodEnabled == false) && (
-                    (Plugin.ShowNotInStack.GetBool() && notInStackFoodRemainder < (requiredfoodCount * warningMultiplier)) ||
-                    (Plugin.ShowNotFirstFood.GetBool() && notFirstFoodRemainder < (requiredfoodCount * warningMultiplier))
+                    (Plugin.ShowNotInStack.Value && notInStackFoodRemainder < (requiredfoodCount * warningMultiplier)) ||
+                    (Plugin.ShowNotFirstFood.Value && notFirstFoodRemainder < (requiredfoodCount * warningMultiplier))
                     ))
                 {
 					//Tried creating a color, but oddly the text would be red, and the icon would be the selected color.
