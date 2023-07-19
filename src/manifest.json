@@ -1,8 +1,7 @@
 {
     "id": "ShowActualAvailableFood",
     "name": "Show Actual Available Food",
-    "workshopId": 2996001778,
-    "version": "2.0.0-beta+002",
+    "version": "2.0.0-beta+004",
     "website_url": "https://github.com/NBKRedSpy/ShowActualAvailableFood",
     "description": "Displays one or more additional food counters which do not include food placed on a Food Producer."
 }
