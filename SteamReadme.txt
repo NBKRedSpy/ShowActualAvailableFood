@@ -7,18 +7,18 @@ These counters indicate if the food on Food Producers will need to be used to fe
 A Food Producer is a garden, farm, fishing trap, etc.
 
 [h1]Display Options[/h1]
-The food count can be &quot;Food not the first item on a Food Producer&quot; and/or &quot;Food that is not part of a stack on a Food Producer&quot;.
+The food count can be "Food not the first item on a Food Producer" and/or "Food that is not part of a stack on a Food Producer".
 
-By default, only the &quot;Not in stack&quot; value is added to the display, and the food text will change to orange if any enabled food counters is under the required food.
+By default, only the "Not in stack" value is added to the display, and the food text will change to orange if any enabled food counters is under the required food.
 
-See [url=#settings]Settings[/url] below.
+See Settings below.
 
 The first 5 items on a Composter are excluded from both counts.
 
 [h2]Example[/h2]
 Given a board where there is only three Raw Fish as food and they are all on a Fish Trap, the counters would show as follows:
 
-Display in game<br />
+Display in game
 0/2/3/999
 [table]
 [tr]
