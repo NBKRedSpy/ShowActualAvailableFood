@@ -1,8 +1,6 @@
 [h1]Show Food Availability[/h1]
 
-Displays one or more additional food counters which do not include food placed on a Food Producer.
-
-These counters indicate if the food on Food Producers will need to be used to feed villagers.
+Adds additional food counters which indicate how much food is freely available.  In other words, food that is not immediately being used by a Food Producer, or not in queue for a Food Producer.
 
 A Food Producer is a garden, farm, fishing trap, etc.
 
