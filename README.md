@@ -1,18 +1,17 @@
 # Show Food Availability
 
-Adds additional food counters which indicate how much food is freely available.  In other words, food that is not immediately being used by a Food Producer, or not in queue for a Food Producer.
+Adds additional food counters which indicate how much food is freely available.  Specifically, food that is not being used by a "Food Processor" such as a campfire or garden.
 
-A Food Producer is a garden, farm, fishing trap, etc.
+This mod can also change the "low food" blink to use a multiplier.  For example, start blinking when there is less than 2x the required food.  This can be enabled in the settings.
 
 # Display Options
-
-The food count can be "Food not the first item on a Food Producer" and/or "Food that is not part of a stack on a Food Producer".
+The food counts can be "Food that is not the first item on a Food Processor" and/or "Food that is not stacked on Food Processor".
 
 By default, only the "Not in stack" value is added to the display, and the food text will change to orange if any enabled food counters is under the required food.
 
 See [Settings](#settings) below.
 
-The first 5 items on a Composter are excluded from both counts.
+The first five items on a Composter are excluded from both counts.
 
 ## Example
 
@@ -37,7 +36,33 @@ Display in game
 |ShowWarningColor|true|If true, the food text will be changed to an orange color if one of the enabled food counters are below the required food.|
 |WarningMultiplier|1|The food warning multiplier.  For example, if the value is 2, the minimum food warning will be shown if the food is less than 2x the required food |
 
-
 # Change Log
-## 2.0 
+
+## 2.1.0
+Added all known food producers and processors.
+
+Thank you to jmucchiello for reporting the missing items issue.
+
+Warning - Card spoiler ahead
+
+[spoiler]
+ 
+ * Garden
+ * FishTrap 
+ * Greenhouse 
+ * Poop
+ * Composter
+ * Hotpot
+ * Tavern
+ * Distillery 
+ * Oven
+ * Soil
+ * Campfire
+ * Stove
+
+ [/spoiler]
+
+
+
+## 2.0.0
 Steam Workshop compatibility.

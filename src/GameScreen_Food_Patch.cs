@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using UnityEngine;
+using System.Net.Http.Headers;
 
 namespace ShowActualAvailableFood
 {
@@ -78,7 +79,7 @@ namespace ShowActualAvailableFood
             foreach (GameCard gameCard in WorldManager.instance.AllCards)
             {
 
-                if (gameCard.MyBoard.IsCurrent && IsFoodProducer(gameCard))
+                if (gameCard.MyBoard.IsCurrent && IsFoodProcessor(gameCard))
                 {
 
                     bool isComposter = gameCard.CardData is Composter;
@@ -112,23 +113,48 @@ namespace ShowActualAvailableFood
             return totalFoodCount;
         }
 
-        public static bool IsFoodProducer(GameCard gameCard)
+        public static bool IsFoodProcessor(GameCard gameCard)
         {
             if (gameCard == null) return false;
 
             CardData cardData = gameCard.CardData;
-            return
-                cardData is Garden ||
-                cardData is FishingSpot ||
-                cardData is FishTrap ||
-                cardData is Greenhouse ||
-                cardData is Poop ||
-                cardData is Composter ||
-                cardData.Id == "soil";      //Soil is a created card.
 
-        }
+            bool wasFound = false;
+
+            wasFound = cardData switch
+            {
+                Garden _ => true,
+                FishTrap _ => true,
+                Greenhouse _ => true,
+                Poop _ => true,
+                Composter _ => true,
+                Hotpot _ => true,
+                Tavern _ => true,
+                Distillery _ => true,
+                Oven _ => true,
+                _ => false,
+            };
+
+            if(wasFound)
+            {
+                return true;
+            }
 
 
+            //Some cards are generically created.
+            // For example, campfire and stove seem to be Resource classes.
+            switch (cardData.Id)
+            {
+                case "soil":
+                case "campfire":
+                case "stove":
+                    wasFound = true;
+                    break;
+            }
+
+            return wasFound;
+
+		}
     }
 
     internal record struct FoodCount(int FirstOnProducer, int OnProduerStack);

@@ -1,19 +1,21 @@
 [h1]Show Food Availability[/h1]
 
-Adds additional food counters which indicate how much food is freely available.  In other words, food that is not immediately being used by a Food Producer, or not in queue for a Food Producer.
+Adds additional food counters which indicate how much food is freely available.  Specifically, food that is not being used by a "Food Processor" such as a campfire or garden.
 
-A Food Producer is a garden, farm, fishing trap, etc.
+This mod can also change the "low food" blink to use a multiplier.  For example, start blinking when there is less than 2x the required food.  This can be enabled in the settings.
 
 [h1]Display Options[/h1]
-The food count can be "Food not the first item on a Food Producer" and/or "Food that is not part of a stack on a Food Producer".
+
+The food counts can be "Food that is not the first item on a Food Processor" and/or "Food that is not stacked on Food Processor".
 
 By default, only the "Not in stack" value is added to the display, and the food text will change to orange if any enabled food counters is under the required food.
 
-See Settings below.
+See [url=#settings]Settings[/url] below.
 
-The first 5 items on a Composter are excluded from both counts.
+The first five items on a Composter are excluded from both counts.
 
 [h2]Example[/h2]
+
 Given a board where there is only three Raw Fish as food and they are all on a Fish Trap, the counters would show as follows:
 
 Display in game
@@ -62,7 +64,6 @@ Display in game
 [/table]
 
 [h1]Settings[/h1]
-
 [table]
 [tr]
 [td]Setting
@@ -107,5 +108,33 @@ Display in game
 [/table]
 
 [h1]Change Log[/h1]
-[h2]2.0[/h2]
+
+[h2]2.1.0[/h2]
+
+Added all known food producers and processors.
+
+Thank you to jmucchiello for reporting the missing items issue.
+
+Warning - Card spoiler ahead
+
+[spoiler]
+[list]
+[*]Garden
+[*]FishTrap
+[*]Greenhouse
+[*]Poop
+[*]Composter
+[*]Hotpot
+[*]Tavern
+[*]Distillery
+[*]Oven
+[*]Soil
+[*]Campfire
+[*]Stove
+[/list]
+
+[/spoiler]
+
+[h2]2.0.0[/h2]
+
 Steam Workshop compatibility.
