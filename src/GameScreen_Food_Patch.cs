@@ -31,25 +31,17 @@ namespace ShowActualAvailableFood
 
             FoodCount count = GetFoodPlacementCount(__instance);
 
-
             int totalFoodCount = WorldManager.instance.GetFoodCount(false);
-
-
 
             List<string> countStrings = new List<string>();
 
             int notInStackFoodRemainder = totalFoodCount - count.OnProduerStack;
             int notFirstFoodRemainder = totalFoodCount - count.FirstOnProducer;
 
-            if (Plugin.ShowNotInStack.Value)
-            {
-                countStrings.Add(notInStackFoodRemainder.ToString());
-            }
 
-            if(Plugin.ShowNotFirstFood.Value)
-            {
-                countStrings.Add(notFirstFoodRemainder.ToString());
-            }
+            if (Plugin.ShowHotPot.Value) countStrings.Add((GetHotPotFoodCount() ?? 0).ToString());
+            if (Plugin.ShowNotInStack.Value) countStrings.Add(notInStackFoodRemainder.ToString());
+            if (Plugin.ShowNotFirstFood.Value) countStrings.Add(notFirstFoodRemainder.ToString());
 
             __instance.FoodText.text = $"{string.Join("/", countStrings)}/{__instance.FoodText.text}";
 
@@ -71,7 +63,16 @@ namespace ShowActualAvailableFood
             }
         }
 
-        internal static FoodCount GetFoodPlacementCount(GameScreen gameScreen)
+        private static int? GetHotPotFoodCount()
+        {
+            List<Hotpot> cards = WorldManager.instance.GetCards<Hotpot>();
+
+            if (cards.Count == 0) return null;
+
+            return cards.Aggregate(0, (count, card) => card.FoodValue + count);
+        }
+
+		internal static FoodCount GetFoodPlacementCount(GameScreen gameScreen)
         {
 
             FoodCount totalFoodCount = new FoodCount();

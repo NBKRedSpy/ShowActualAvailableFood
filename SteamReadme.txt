@@ -6,9 +6,12 @@ This mod can also change the "low food" blink to use a multiplier.  For example,
 
 [h1]Display Options[/h1]
 
-The food counts can be "Food that is not the first item on a Food Processor" and/or "Food that is not stacked on Food Processor".
-
-By default, only the "Not in stack" value is added to the display, and the food text will change to orange if any enabled food counters is under the required food.
+The following counters can be enabled:
+[list]
+[*]Total food in all hot pots.
+[*]Food that is not the first item on a Food Processor
+[*](Default) Food that is not stacked on Food Processor.
+[/list]
 
 See [url=#settings]Settings[/url] below.
 
@@ -16,52 +19,7 @@ The first five items on a Composter are excluded from both counts.
 
 [h2]Example[/h2]
 
-Given a board where there is only three Raw Fish as food and they are all on a Fish Trap, the counters would show as follows:
-
-Display in game
-0/2/3/999
-[table]
-[tr]
-[td]Counter
-[/td]
-[td]Value
-[/td]
-[td]Is regular game counter
-[/td]
-[/tr]
-[tr]
-[td]Not in stack
-[/td]
-[td]0
-[/td]
-[td]
-[/td]
-[/tr]
-[tr]
-[td]Not first item on stack
-[/td]
-[td]2
-[/td]
-[td]
-[/td]
-[/tr]
-[tr]
-[td]Game's total Food
-[/td]
-[td]3
-[/td]
-[td]true
-[/td]
-[/tr]
-[tr]
-[td]Food required to feed the Villagers
-[/td]
-[td]999
-[/td]
-[td]true
-[/td]
-[/tr]
-[/table]
+[img]https://raw.githubusercontent.com/NBKRedSpy/ShowActualAvailableFood/master/media/Example%20Diagram.png[/img]
 
 [h1]Settings[/h1]
 [table]
@@ -76,17 +34,25 @@ Display in game
 [tr]
 [td]ShowNotFirstFood
 [/td]
-[td]false
+[td]Off
 [/td]
-[td]Shows the amount of food that is not the first card on a food consumer.  The first five items on a Composter are also excluded from this count.
+[td]Shows the amount of food that is not the first card on a food processor.  The first five items on a Composter are also excluded from this count.
 [/td]
 [/tr]
 [tr]
 [td]ShowNotInStack
 [/td]
-[td]true
+[td]On
 [/td]
-[td]Shows the amount of food that is not on a food consumer at all.
+[td]Shows the amount of food that is not on a food processor at all.
+[/td]
+[/tr]
+[tr]
+[td]Show Hotpot
+[/td]
+[td]Off
+[/td]
+[td]Shows the total amount of food in hotpots
 [/td]
 [/tr]
 [tr]
@@ -108,6 +74,11 @@ Display in game
 [/table]
 
 [h1]Change Log[/h1]
+
+[h2]2.2.0[/h2]
+
+Added optional hotpot counter.
+Thank you to jmucchiello for the suggestion.
 
 [h2]2.1.0[/h2]
 
